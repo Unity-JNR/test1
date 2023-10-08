@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA-Themed Landing Page</title>
+    <style>
+        /* NASA-themed CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Black background */
+            color: #fff; /* White text color */
+        }
+
+        header {
+            background-color: #003478; /* NASA blue */
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        /* Start button styling */
+        .start-button {
+            background-color: #003478; /* NASA blue */
+            color: #fff; /* White text color */
+            padding: 10px 20px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Page content styling */
+        .page {
+            display: none; /* Initially hidden */
+            padding: 20px;
+        }
+
+        /* Add more CSS styles for your content as needed */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to NASA Explorer</h1>
+        <p>Explore the wonders of the universe with NASA's latest discoveries and breathtaking images.</p>
+    </header>
+
+    <main>
+        <div class="page" id="page1">
+            <h2>Page 1</h2>
+            <p>This is the first page of the NASA-themed landing page.</p>
+        </div>
+
+        <div class="page" id="page2">
+            <h2>Page 2</h2>
+            <p>This is the second page of the NASA-themed landing page.</p>
+        </div>
+
+        <!-- Add more pages as needed -->
+    </main>
+
+    <button class="start-button" id="start-button">Click Start</button>
+
+    <script>
+        // JavaScript for handling page navigation
+        const startButton = document.getElementById('start-button');
+        const pages = document.querySelectorAll('.page');
+        let currentPageIndex = 0;
+
+        startButton.addEventListener('click', () => {
+            if (currentPageIndex < pages.length) {
+                pages[currentPageIndex].style.display = 'none';
+                currentPageIndex++;
+                if (currentPageIndex < pages.length) {
+                    pages[currentPageIndex].style.display = 'block';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
